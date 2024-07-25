@@ -1,19 +1,14 @@
 # Memento Box
 
-
 ## Description
 
-
 _Duration: 3.5 Week Sprint, working part time_
-
 
 Memento Box is a collaboration platform for groups to put together digital “boxes” around celebrations for loved ones. Collect videos, photos, voice memos and more to package into a digital box and send to someone.
 Memento is there for any occasion you want to celebrate - birthdays, anniversaries, weddings, retirements, you name it!
 What’s inside Memento box? That’s up to you!!
 
-
 Users can:
-
 
 * Create an account
 * Design a box by choosing box color and from a number of ribbon colors and styles
@@ -22,21 +17,15 @@ Users can:
 * Recipients receive an email and click the box to open the site, where they can then view its contents by clicking through the box
 * Recipients can send thank you notes to some or all senders and collaborators
 
-
 The app stores all users, content, and recipient information on a database until they are deleted.  Documentation provides sample content for the database in addition to the queries needed to properly structure the database.
-
 
 This app was built as a collaborative capstone project for a full-stack software engineering program at Prime Digital Academy.  Here are the [assignment instructions](./INSTRUCTIONS.md).
 
-
-Memento Box will be deployed using Heroku in the near future.
-
+[Memento Box has been deployed on Heroku.](https://mementobox-880f810cd07a.herokuapp.com/#/home)
 
 ## Development team
 
-
 This was a collaborative project.  Our development team was:
-
 
 [Mohamed Ali](https://github.com/Mohagosaar)
 <br> [Matt Gilbertson](https://github.com/mgilbertsonund)
@@ -49,9 +38,7 @@ This was a collaborative project.  Our development team was:
 <br> [Erik Silcox](https://github.com/Erik651)
 <br> [David Smith](https://github.com/Djsmith611)
 
-
 ## Screen shots
-
 
 Home page:
 <br />
@@ -80,20 +67,15 @@ Thank you page:
 <center><image src=public/readme/thank-you-page.png width=50%></center>
 <br />
 
-
 ## Prerequisites
-
 
 * [Node.js](https://nodejs.org/en/)
 * [Postgres](https://www.postgresql.org/download/)
 * [Nodemon](https://nodemon.io)
 
-
 ## Setup instructions
 
-
 The application has been tested and run on a local machine using the browser. It may be deployed in the future but currently is only available locally.
-
 
 1. Clone down a version of this repository
 1. Create a database named `prime-app`
@@ -103,9 +85,7 @@ The application has been tested and run on a local machine using the browser. It
    * The queries will also populate some tables with necessary information to enable styling and occasion selections in the application
 1. Create a `.env` file at the root of the project.  Generate and add a `SERVER_SESSION_SECRET`.  For example:
 
-
   `SERVER_SESSION_SECRET=X5hooooSAMPLEAPIKEYoooodN6v`
-
 
   If you don't add a `.env` file and secret or create a secret with less than eight characters, you will get a warning when you try to use the application.
 1. Open in your editor of choice and run an `npm install`
@@ -113,9 +93,7 @@ The application has been tested and run on a local machine using the browser. It
 1. Run `npm run client` in your terminal
 1. Navigate to the localhost port provided by your terminal when you initiate your client.  The default port when running Vite, for example, is `http://localhost:5173/`
 
-
 __Note:__ You will need to set up MailChimp to use this application.  [Instructions for working with MailChimp and the Memento Box application](#mailchimp-email) can be found at the end of this document.
-
 
 ## Usage
 See this video walkthrough of application useage.
@@ -137,9 +115,7 @@ Once everything is installed and running it should open in your default browser
 4. From the build & edit view the user will add all the content they and their collaborators want inside the box.
 5. Once all content has been added user can select the admin overview tab in the build & edit menu, from there the user will be prompted to to set up the delivery of the digital box to their recipient.
 
-
 ## Technologies
-
 
 * [hamburger-react](https://www.npmjs.com/package/hamburger-react)
 * [Material UI](https://mui.com/)
@@ -159,9 +135,7 @@ Once everything is installed and running it should open in your default browser
 * [Passport](https://www.passportjs.org/)
 * PostgreSQL
 
-
 ## Tools
-
 
 * [DB Designer](https://www.dbdesigner.net/)
 * [Figma](https://www.figma.com)
@@ -170,17 +144,13 @@ Once everything is installed and running it should open in your default browser
 * Slack
 * Zoom
 
-
 ## Documentation
 This project included scope documentation.
 
-
 This documentation was built following a [provided template](https://github.com/PrimeAcademy/readme-template/blob/main/README.md).   It has been edited for style,  consistency, and to provide all relevant details.
-
 
 ## Future development
 The following features are planned for development:
-
 
 * Security: the application needs to apply unique keys to boxes in order to be secure for users and recipients
 * Pricing tiers: box build out will be priced according to the number of collaborators
@@ -188,60 +158,46 @@ The following features are planned for development:
 * Data collection and flow: for full functionality, data flow through the app will need to be standardized
 * Newsletter: visitors to the site will be able to provide their email address in a field in the footer and will be registered to receive the Memento Box Newsletter
 
-
 ----
 ----
-
 
 ## MailChimp email
 
-
 MailChimp has a [breakdown of when you should use which of their APIs](https://mailchimp.com/developer/transactional/guides/send-first-email/#transactional-vs-marketing-email).
-
 
 The following is a step-by-step guide for how MailChimp is or will be integrated with this application and how you can implement it in your own instance.
 
-
 ### Marketing email (newsletter) setup using MailChimp -- FUTURE STATE
-
 
 * If you have not already created a `.env` file at the root of the project, create one.
 * Create a MailChimp account.  You should be able to use a [free account](https://login.mailchimp.com/signup/?plan=free_monthly_plan_v0&locale=en&subscribers=500) for the basic functionality of this application.
 * [Create an API key in your account](https://mailchimp.com/help/about-api-keys/#Generate_an_API_key).
 * Insert your API key into your `.env` file with the name `MARKETING_KEY`.  For example:
 
-
 ```plaintext
 MARKETING_KEY=FooVX5hooooSAMPLEAPIKEYooood4mXV7RUt2N6v
 ```
 
-
 * Find your MailChimp data center.  It's at the start of the URL you visit when you're on your dashboard.  [Here's more information](https://mailchimp.com/developer/marketing/docs/fundamentals/#connecting-to-the-api).
 * Insert your data center into your `.env` file with the name `MARKETING_DC`.  For example:
-
 
 ```plaintext
 MARKETING_DC=us12
 ```
 
-
 * Find your MailChimp Audience ID by following the following path or using their [help center instructions](https://mailchimp.com/help/find-audience-id/):
   * "Audience" > "Audience dashboard" > "Manage Audience" > "Settings"
 * Insert your data center into your `.env` file with the name `MARKETING_AUD_ID`.  For example:
-
 
 ```plaintext
 MARKETING_AUD_ID=304g5398t4
 ```
 
-
 ### Transactional email (gift emails, etc.) setup using MailChimp
-
 
 1. If you have not already created a `.env` file at the root of the project, create one.
 1. Create a MailChimp account.  You should be able to use a [free account](https://login.mailchimp.com/signup/?plan=free_monthly_plan_v0&locale=en&subscribers=500) for the basic functionality of this application. <br>
 __NOTE:__ The free version of MailChimp Transactional/Mandrill will ONLY send to email addresses at the domain that you have registered.  This means you cannot effectively use the free version for more than testing/demos.
-
 
 1. Navigate to Transactional email from the dashboard sidebar: "Automations" > "Transactional email"
 1. Select "Try for free" if you are using a free account.
@@ -252,14 +208,11 @@ __NOTE:__ The free version of MailChimp Transactional/Mandrill will ONLY send to
 1. Create a new API key by selecting "+ New API Key"
 1. Insert your API key into your `.env` file with the name `TRANSACTIONAL_KEY`.  For example:
 
-
 ```plaintext
 TRANSACTIONAL_KEY=X5hooooSAMPLEAPIKEYoooodN6v
 ```
 
-
 #### Using the email template:
-
 
 1. Create template for email in MailChimp account using template provided in this folder
    1. Log into Mandrill using MailChimp account information (can access Mandrill from the MailChimp dashboard by navigating to "Automations" > "Transactional email" in the sidebar)
